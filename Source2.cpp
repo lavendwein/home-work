@@ -28,7 +28,7 @@ public:
             return false;
     }
 
-    void enQueue(int x) { //добавление элемента
+    void enQueue(int x) { 
         if (Full()) {
             cout << "Queue is full" << endl;
         }
@@ -41,7 +41,7 @@ public:
         }
     }
 
-    int deQueue() { //удаление элемента
+    int deQueue() { 
         int x;
         if (Empty()) {
             cout << "Queue is empty" << endl;
@@ -74,10 +74,10 @@ public:
 
 int main() {
     queue qu;
-    //инициализируем очередь
+    
     for (int i = 1; i < 12; i++)
         qu.enQueue(i);
-    //выводим очередь
+    
     qu.out();
 
     return 0;
