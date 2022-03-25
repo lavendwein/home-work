@@ -21,7 +21,6 @@ int main()
 	string str;
 	string out = "";
 	stack <char> stack_1;
-	stack <int> stack_2;
 	getline(cin, str);
 	for (int i = 0; i < str.length(); ++i) {
 		if (isdigit(str[i])) {
@@ -57,44 +56,4 @@ int main()
 		stack_1.pop();
 	}
 	cout << out << endl;
-
-	for (int i = 0; i < out.length(); i++) {
-		if (isdigit(out[i])) {
-			stack_2.push( atoi(&(out[i])) );
-			cout << stack_2.top() << " " << out[i] << endl;
-		}
-		else if (out[i] == '+') {
-			int a, b;
-			a = stack_2.top();
-			stack_2.pop();
-			b = stack_2.top();
-			stack_2.pop();
-			stack_2.push(b + a);
-		}
-		else if (out[i] == '-') {
-			int a, b;
-			a = stack_2.top();
-			stack_2.pop();
-			b = stack_2.top();
-			stack_2.pop();
-			stack_2.push(b - a);
-		}
-		else if (out[i] == '*') {
-			int a, b;
-			a = stack_2.top();
-			stack_2.pop();
-			b = stack_2.top();
-			stack_2.pop();
-			stack_2.push(b * a);
-		}
-		else if (out[i] == '/') {
-			int a, b;
-			a = stack_2.top();
-			stack_2.pop();
-			b = stack_2.top();
-			stack_2.pop();
-			stack_2.push(b / a);
-		}
-	}
-	cout << stack_2.top();
 }
