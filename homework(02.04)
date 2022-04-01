@@ -1,0 +1,133 @@
+#include <iostream>
+#include <fstream>
+#include <stack>
+#include <algorithm>
+
+using namespace std;
+
+//№970
+
+//bool summa(int sum, int a1, int a2, int a3)
+//{
+//    int sum_1 = sum;
+//    if (sum_1 - a1 == a1)
+//        return true;
+//    else if (sum_1 - a2 == a2)
+//        return true;
+//    else if (sum_1 - a3 == a3)
+//        return true;
+//    else
+//        return false;
+//}
+
+//int main()
+//{
+//    ifstream File("input.txt");
+//    ofstream FileOut("output.txt");
+//    int a1, a2, a3;
+//    File >> a1;
+//    File >> a2;
+//    File >> a3;
+//    int sum = a1 + a2 + a3;
+//    if (summa(sum, a1, a2, a3))
+//        FileOut << "YES";
+//    else
+//        FileOut << "NO";
+//    File.close();
+//    FileOut.close();
+//    return 0;
+//}
+
+//№149
+
+//int main()
+//{
+//	ifstream File("input.txt");
+//	ofstream FileOut("output.txt");
+//	stack <int> stack;
+//	int n;
+//	File >> n;
+//	while (!File.eof())
+//	{
+//		int x;
+//		File >> x;
+//		cout << x << " ";
+//		stack.push(x);
+//	}
+//	cout << endl;
+//	while (!stack.empty())
+//	{
+//		cout << stack.top() << " ";
+//		FileOut << stack.top() << " ";
+//		stack.pop();
+//	}
+//	File.close();
+//	FileOut.close();
+//	return 0;
+//}
+
+//№892
+
+int main()
+{
+	ifstream File("input.txt");
+	ofstream FileOut("output.txt");
+	int x;
+	File >> x;
+	if (x == 1 || x == 2 || x == 12)
+	{
+		cout << "Winter" << endl;
+		FileOut << "Winter";
+	}
+	else if (x >= 3 && x <= 5)
+	{
+		cout << "Spring" << endl;
+		FileOut << "Spring";
+	}
+	else if (x >= 6 && x <= 8)
+	{
+		cout << "Summer" << endl;
+		FileOut << "Summer";
+	}
+	else if (x >= 9 && x <= 11)
+	{
+		cout << "Autumn" << endl;
+		FileOut << "Autumn";
+	}
+	else
+	{
+		cout << "Error" << endl;
+		FileOut << "Error";
+	}
+	File.close();
+	FileOut.close();
+}
+
+//№685
+
+//int comp(const void* a, const void* b)
+//{
+//	return (*(int*)a - *(int*)b);
+//}
+//int main()
+//{
+//	//выбрать наибольшую емкость и заполнять ее наиболее дорогим песком
+//	ifstream File("input.txt");
+//	ofstream FileOut("output.txt");
+//	int a1, a2, a3, b1, b2, b3;
+//	File >> a1 >> a2 >> a3 >> b1 >> b2 >> b3;
+//	int prices[] = { a1, a2, a3 };
+//	int sizes[] = { b1, b2, b3 };
+//	qsort(prices, 3, sizeof(int), comp);
+//	qsort(sizes, 3, sizeof(int), comp);
+//	int sum = 0;
+//	for (int i = 0; i < 3; i++)
+//	{
+//		sum += prices[i] * sizes[i];
+//	}
+//	cout << sum << endl;
+//	FileOut << sum;
+//	File.close();
+//	FileOut.close();
+//	return 0;
+//}
